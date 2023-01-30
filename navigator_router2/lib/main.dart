@@ -11,7 +11,7 @@ void main() {
       '/': (context) => Homepage(),
       '/second page': (context) => SecondPage(
             username: username,
-            isFromThird: false,
+
           ),
       '/third_page': (context) => ThirdPage(),
     },

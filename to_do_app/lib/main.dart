@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:to_do_app/pages/categories.dart';
 import  'package:to_do_app/pages/home_page.dart';
+import 'package:to_do_app/pages/imp.dart';
 
 void main() async {
 
@@ -20,7 +22,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
       ),
-      home: const HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/':(context)=>HomePage(),
+        '/categories':(context)=>Categories(),
+        '/imp':(context)=>Imp(),
+
+      },
     );
   }
 }

@@ -9,29 +9,45 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 10.0),
+        margin: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
         padding: const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-        width: 150.0,
-        height: 200.0,
+        width: 270.0,
         decoration: const BoxDecoration(
           color: Colors.white,
           border: Border(
-              top: BorderSide(width: 2.0),
-              left: BorderSide(width: 2.0),
-              right: BorderSide(width: 2.0),
-              bottom: BorderSide(width: 2.0)),
+          ),
         ),
         child: Column(
             // mainAxisAlignment: MainAxisAlignment.start,
             //mainAxisSize: MainAxisSize.min,
             children: [
-              data.image,
-              Text(
-                data.name,
-                style: TextStyle(color: Colors.black),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: data.image,
               ),
-              Text(data.rating, style: TextStyle(color: Colors.black)),
-              Text(data.category, style: TextStyle(color: Colors.black)),
+              const SizedBox(height: 3.0,),
+              Row(
+                children: [
+                  CircleAvatar(child: data.icon,),
+                  const SizedBox(width:10.0 ,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        data.name,
+                        style: const TextStyle(color: Colors.black),
+                      ),
+                      Text(data.rating, style: const TextStyle(color: Colors.black)),
+                      Text(data.category, style: const TextStyle(color: Colors.black)),
+
+                    ],
+
+                  ),
+
+                ],
+              ),
+
             ]));
   }
 }

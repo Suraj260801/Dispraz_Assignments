@@ -4,14 +4,14 @@ import 'package:navigator_router2/pages/thirdpage.dart';
 class SecondPage extends StatelessWidget {
   final TextEditingController _nameController = TextEditingController();
   ValueNotifier<String> username = ValueNotifier('');
-  bool isFromThird=true;
 
-  SecondPage({super.key, required this.username,required this.isFromThird});
+
+  SecondPage({super.key, required this.username,});
 
   @override
   Widget build(BuildContext context) {
     var args=ModalRoute.of(context)?.settings.arguments;
-
+    _nameController.text=args!=null?args.toString():"";
     return Scaffold(
       appBar: AppBar(
         title: const Text('Secondpage'),
@@ -25,10 +25,9 @@ class SecondPage extends StatelessWidget {
               controller: _nameController,
               cursorHeight: 25.0,
               showCursor: true,
-              decoration:  InputDecoration(
-                labelText: isFromThird==true?args.toString():"",
+              decoration:  const InputDecoration(
                   hintText: 'Enter Your Name Here',
-                  enabledBorder: const OutlineInputBorder(
+                  enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(width: 1.0, color: Colors.blue))),
             ),
             ElevatedButton(
@@ -37,6 +36,7 @@ class SecondPage extends StatelessWidget {
                   'key1': _nameController.text,
                   'notifier': username
                 });
+                _nameController.clear();
               },
               child: Text('Submit'),
             )

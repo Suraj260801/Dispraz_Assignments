@@ -31,7 +31,6 @@ class Homepage extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => SecondPage(
                         username: username,
-                        isFromThird: false,
                       ),
                     ));
               },

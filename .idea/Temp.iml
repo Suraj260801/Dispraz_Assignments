@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/navigator_router2/build" />
+      <excludeFolder url="file://$MODULE_DIR$/navigator_router2/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/navigator_router2/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_api_project/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_api_project/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_api_project/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/play_store_home_screen/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/play_store_home_screen/build" />
+      <excludeFolder url="file://$MODULE_DIR$/play_store_home_screen/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/to_do_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/to_do_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/to_do_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/assignment_3/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/assignment_3/build" />
+      <excludeFolder url="file://$MODULE_DIR$/assignment_3/.pub" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
