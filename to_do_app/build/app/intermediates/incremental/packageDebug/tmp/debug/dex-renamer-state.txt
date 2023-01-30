@@ -1,0 +1,4 @@
+#Sat Jan 28 23:09:04 IST 2023
+base.0=/home/josh1/Desktop/Temp/to_do_app/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
