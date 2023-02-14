@@ -8,7 +8,7 @@ class ProductTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
     return InkWell(
       onTap: (){
          Navigator.pushNamed(context, '/description',arguments: product);

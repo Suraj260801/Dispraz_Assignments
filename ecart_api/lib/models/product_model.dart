@@ -12,10 +12,10 @@ class ProductModel {
     required this.limit,
   });
 
-  List<Product> products;
-  int total;
-  int skip;
-  int limit;
+  final List<Product> products;
+  final int total;
+  final int skip;
+  final int limit;
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
     products: List<Product>.from(json["products"].map((x) => Product.fromJson(x))),
@@ -47,17 +47,17 @@ class Product {
     required this.images,
   });
 
-  int id;
-  String title;
-  String description;
-  int price;
-  double discountPercentage;
-  double rating;
-  int stock;
-  String brand;
-  String category;
-  String thumbnail;
-  List<String> images;
+  final int id;
+  final String title;
+  final String description;
+  final int price;
+  final double discountPercentage;
+  final double rating;
+  final int stock;
+  final String brand;
+  final String category;
+  final String thumbnail;
+  final List<String> images;
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
     id: json["id"],
