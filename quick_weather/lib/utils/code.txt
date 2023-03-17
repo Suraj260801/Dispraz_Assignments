@@ -1,0 +1,70 @@
+  // Container(
+            //   height: 62,
+            //   margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+            //   padding: const EdgeInsets.fromLTRB(10, 0, 5, 0),
+            //   decoration: BoxDecoration(
+            //       color: Colors.blueGrey.shade100,
+            //       borderRadius: BorderRadius.circular(30)),
+            //   child:  Form(
+            //     key: formKey,
+            //     autovalidateMode: AutovalidateMode.onUserInteraction,
+            //     child: TextFormField(
+            //       validator: (value) {
+            //         if(value !=null) {
+            //           if (value!.isEmpty) {
+            //             return 'Password cannot be blank';
+            //           }
+            //         }
+            //       },
+            //       controller: locationController,
+            //       decoration: const InputDecoration(
+            //         hintText: 'Enter your city name.'
+            //       ),
+            //     ),
+            //
+            //   ),
+            // ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.end,
+            //   children: [
+            //     ElevatedButton(
+            //         onPressed: (){
+            //           validate();
+            //              Navigator.pop(context,[locationController.text.toString()]);
+            //         },
+            //         child: const Text('Search')
+            //     ),
+            //   ],
+            // ),
+
+
+
+class MyIconButton extends StatefulWidget {
+  final WeatherModel weatherModel;
+  ValueNotifier<String> updatedLocation=ValueNotifier("");
+  MyIconButton({Key? key, required this.weatherModel,required this.updatedLocation}) : super(key: key);
+
+  @override
+  State<MyIconButton> createState() => _MyIconButtonState();
+}
+
+class _MyIconButtonState extends State<MyIconButton> {
+  @override
+  Widget build(BuildContext context) {
+
+    return IconButton(
+        onPressed: () async {
+          Location? weatherLocation=widget.weatherModel.weather?.location;
+          Current? weatherCurrent=widget.weatherModel.weather?.current;
+          List<String> location = await Navigator.pushNamed(
+              context, '/newLocation',arguments: [weatherLocation?.lat,weatherLocation?.lon]) as List<String>;
+          widget.updatedLocation.value = location[0];
+          await updateLocation(location[0]);
+          checkDuplicateLocatin(weatherLocation!,weatherCurrent!);
+        },
+        icon:const Icon(Icons.location_pin)
+    );
+  }
+}
+
+  //https://dev.to/0xba1/using-regular-expressionsregexp-in-dartflutter-3p1j
